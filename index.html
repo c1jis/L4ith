@@ -14,6 +14,132 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            overflow-x: hidden; /* منع التمرير الأفقي */
+        }
+
+        header {
+            background: linear-gradient(135deg, #333, #444); /* تدرج لوني */
+            color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* تأثير الظل */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px; /* توسيع المسافة بين العناصر */
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s; /* تأثير الانتقال */
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00; /* تغيير اللون عند التمرير */
+        }
+
+        main {
+            padding-top: 80px; /* لضبط المسافة تحت الشريط الثابت */
+        }
+
+        section {
+            padding: 30px;
+            margin: 0 auto;
+            max-width: 900px;
+            background-color: rgba(255, 255, 255, 0.9); /* خلفية شبه شفافة */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* تحسين تأثير الظل */
+            margin-bottom: 30px;
+            transition: transform 0.3s; /* تأثير الانتقال */
+        }
+
+        section:hover {
+            transform: translateY(-5px); /* تأثير التحجيم عند التمرير */
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border: 4px solid #007bff; /* إضافة حدود للصورة */
+            transition: transform 0.3s; /* تأثير الانتقال */
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1); /* تكبير الصورة عند التمرير */
+        }
+
+        #projects ul, #social ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #projects li, #social li {
+            margin-bottom: 15px;
+        }
+
+        #projects a, #social a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #projects a:hover, #social a:hover {
+            text-decoration: underline;
+            color: #0056b3; /* تغيير اللون عند التمرير */
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        form button {
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #333, #444); /* تدرج لوني */
+            color: #fff;
         }
     </style>
 </head>
@@ -47,8 +173,8 @@
         <section id="social">
             <h2>حساباتي الاجتماعية</h2>
             <ul>
-                <li><a href="https://instagram.com/c1jis" target="_blank">انستكرام</a></li>
-                <li><a href="https://telegram.com/in/GXXQT" target="_blank">تلكرام</a></li>
+                <li><a href="https://instagram.com/c1jis" target="_blank">انستجرام</a></li>
+                <li><a href="https://t.me/GXXQT" target="_blank">تليجرام</a></li>
                 <li><a href="https://github.com/c1jis" target="_blank">غيت هاب</a></li>
             </ul>
         </section>
