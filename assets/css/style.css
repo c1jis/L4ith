@@ -2,14 +2,16 @@
 body {
     font-family: 'Roboto', sans-serif;
     color: #333;
-    background-color: #f4f4f4;
-    background-image: url('assets/images/profile.jpg'); /* مسار الصورة الخلفية */
-    background-size: cover; /* يجعل الصورة تغطي كامل الصفحة */
-    background-position: center; /* يحدد مكان الصورة في الصفحة */
-    background-repeat: no-repeat; /* يمنع تكرار الصورة */
-    margin: 0;
-    padding: 0;
+    background-image: url('https://c1jis.github.io/L4ith/assets/images/profile.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow-x: hidden; /* منع التمرير الأفقي */
+}
+
+/* شريط التمرير */
+html {
+    scroll-behavior: smooth; /* تفعيل التمرير السلس */
 }
 
 header {
