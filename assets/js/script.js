@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
         anchor.addEventListener('click', function(event) {
             // إزالة التحديد عن جميع الروابط
             document.querySelectorAll('nav ul li a').forEach(function(link) {
-                link.style.backgroundColor = ''; // إزالة لون الخلفية
-                link.style.color = ''; // إزالة لون النص
+                link.style.backgroundColor = '';
+                link.style.color = '';
             });
 
             // تمييز الرابط الذي تم النقر عليه
@@ -25,9 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (name === '' || email === '' || message === '') {
             alert('يرجى ملء جميع الحقول.');
             event.preventDefault(); // يمنع إرسال النموذج
-        } else {
-            // يمكن إضافة مزيد من التحقق من صحة البريد الإلكتروني إذا لزم الأمر
-            // ويمكن إضافة معالجة إضافية هنا إذا لزم الأمر
         }
     });
 });
