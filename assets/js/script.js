@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         anchor.addEventListener('click', function(event) {
             // إزالة التحديد عن جميع الروابط
             document.querySelectorAll('nav ul li a').forEach(function(link) {
-                link.style.backgroundColor = '';
+                link.style.backgroundColor = 'https://benisnous.com/wp-content/uploads/2020/12/How-To-Install-Kali-Linux-On-VMware-Workstation-800x445.jpg';
                 link.style.color = '';
             });
 
