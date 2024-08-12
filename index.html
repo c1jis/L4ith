@@ -3,98 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع شخصي</title>
-    <style>
-        /* CSS - يمكنك تعديل الألوان والخلفيات هنا */
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #222;
-            color: #fff;
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            text-align: center;
-        }
-
-        main {
-            padding-top: 60px;
-            padding: 20px;
-        }
-
-        section {
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 800px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        section:hover {
-            background-color: #e0e0e0;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        form {
-            display: grid;
-            gap: 10px;
-        }
-
-        form label {
-            margin-bottom: 5px;
-        }
-
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #222;
-            color: #fff;
-        }
-    </style>
+    <meta name="description" content="موقع شخصي يعبر عن ليث ويعرض حساباته ومشاريعه.">
+    <title>موقعي الشخصي</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
-        <h1>مرحبا بك في موقعي الشخصي</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">من أنا</a></li>
+                <li><a href="#projects">مشاريعي</a></li>
+                <li><a href="#social">حساباتي</a></li>
+                <li><a href="#contact">اتصل بي</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section id="colorSection">
-            <h2>هذا قسم يمكن تغيير لونه</h2>
-            <button id="colorChangeBtn">تغيير اللون</button>
+        <section id="about">
+            <h2>من أنا</h2>
+            <img src="assets/images/profile.jpg" alt="صورة شخصية" class="profile-img">
+            <p>مرحبًا، أنا ليث. أعمل في مجال الأمن السيبراني وأحب البرمجة والتكنولوجيا. يمكنك الاطلاع على المزيد من المعلومات حولي هنا.</p>
         </section>
 
-        <section>
+        <section id="projects">
+            <h2>مشاريعي</h2>
+            <ul>
+                <li><a href="https://example.com/project1" target="_blank">مشروع 1</a> - وصف مختصر للمشروع.</li>
+                <li><a href="https://example.com/project2" target="_blank">مشروع 2</a> - وصف مختصر للمشروع.</li>
+            </ul>
+        </section>
+
+        <section id="social">
+            <h2>حساباتي الاجتماعية</h2>
+            <ul>
+                <li><a href="https://twitter.com/yourusername" target="_blank">تويتر</a></li>
+                <li><a href="https://linkedin.com/in/yourusername" target="_blank">لينكد إن</a></li>
+                <li><a href="https://github.com/yourusername" target="_blank">غيت هاب</a></li>
+            </ul>
+        </section>
+
+        <section id="contact">
             <h2>اتصل بي</h2>
-            <form id="contactForm">
+            <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
                 <label for="name">الاسم:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">البريد الإلكتروني:</label>
@@ -106,33 +56,7 @@
         </section>
     </main>
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2024</p>
+        <p>© 2024 ليث. جميع الحقوق محفوظة.</p>
     </footer>
-    <script>
-        // جافا سكريبت - تحقق من تحميل DOM بالكامل
-        document.addEventListener('DOMContentLoaded', function() {
-            // الحصول على الزر والقسم
-            const button = document.getElementById('colorChangeBtn');
-            const section = document.getElementById('colorSection');
-            
-            // إضافة حدث عند النقر على الزر
-            button.addEventListener('click', function() {
-                // تغيير لون الخلفية للقسم
-                section.style.backgroundColor = '#e0e0e0';
-            });
-
-            // الحصول على النموذج
-            const form = document.getElementById('contactForm');
-            
-            // إضافة حدث عند إرسال النموذج
-            form.addEventListener('submit', function(event) {
-                const name = document.getElementById('name').value;
-                if (name.trim() === '') {
-                    alert('الاسم مطلوب!');
-                    event.preventDefault(); // يمنع إرسال النموذج
-                }
-            });
-        });
-    </script>
 </body>
 </html>
