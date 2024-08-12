@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="موقع شخصي يعبر عن ليث ويعرض حساباته ومشاريعه.">
     <title>موقعي الشخصي</title>
-    <!-- تأكد من أن الرابط إلى ملف CSS هو HTTPS -->
     <link rel="stylesheet" href="https://c1jis.github.io/L4ith/assets/css/style.css">
     <style>
-        /* تأكد من إضافة الخلفية هنا */
         body {
             background-image: url('https://c1jis.github.io/L4ith/assets/images/profile.jpg');
             background-size: cover;
@@ -147,17 +145,16 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#about">من أنا</a></li>
-                <li><a href="#projects">مشاريعي</a></li>
-                <li><a href="#social">حساباتي</a></li>
-                <li><a href="#contact">اتصل بي</a></li>
+                <li><a href="#about" class="scroll-link">من أنا</a></li>
+                <li><a href="#projects" class="scroll-link">مشاريعي</a></li>
+                <li><a href="#social" class="scroll-link">حساباتي</a></li>
+                <li><a href="#contact" class="scroll-link">اتصل بي</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section id="about">
             <h2>من أنا</h2>
-            <!-- تأكد من أن الرابط إلى الصورة هو HTTPS -->
             <img src="https://c1jis.github.io/L4ith/assets/images/profile.jpg" alt="صورة شخصية " class="profile-img">
             <p>مرحبًا، أنا ليث. أعمل في مجال الأمن السيبراني وأحب البرمجة والتكنولوجيا. يمكنك الاطلاع على المزيد من المعلومات حولي هنا.</p>
         </section>
@@ -181,7 +178,6 @@
 
         <section id="contact">
             <h2>اتصل بي</h2>
-            <!-- يمكنك استخدام خدمة نماذج بدلاً من mailto: -->
             <form action="https://formspree.io/f/{your-form-id}" method="POST">
                 <label for="name">الاسم:</label>
                 <input type="text" id="name" name="name" required>
@@ -196,6 +192,15 @@
     <footer>
         <p>© 2024 ليث. جميع الحقوق محفوظة.</p>
     </footer>
+    <!-- تضمين مكتبة Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
+    <script>
+        // تفعيل Smooth Scroll
+        var scroll = new SmoothScroll('.scroll-link', {
+            speed: 500, // سرعة الانتقال
+            offset: 70 // المسافة من أعلى الشاشة
+        });
+    </script>
     <!-- تأكد من أن الرابط إلى ملف JavaScript هو HTTPS -->
     <script src="https://c1jis.github.io/L4ith/assets/js/script.js"></script>
 </body>
