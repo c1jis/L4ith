@@ -1,6 +1,6 @@
-/* الأساسيات */
+/* استايل عام */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #333;
     background-color: #f4f4f4;
     margin: 0;
@@ -8,93 +8,103 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #222;
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ffcc00; /* تغيير اللون عند المرور بالماوس */
-}
-
-.hero {
-    background-color: #444;
-    color: #fff;
-    padding: 50px 0;
-    text-align: center;
-    background-image: url('assets/images/hero-bg.jpg'); /* إضافة صورة خلفية */
-    background-size: cover;
-    background-position: center;
-}
-
-.hero h1 {
-    font-size: 2.5em;
-    margin: 0;
 }
 
 main {
-    padding: 20px;
+    padding-top: 60px; /* لضبط المسافة تحت الشريط الثابت */
 }
 
 section {
-    margin-bottom: 40px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
 
-section h2 {
-    font-size: 2em;
-    color: #333;
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
 }
 
-section p {
-    line-height: 1.6;
+#projects ul, #social ul {
+    list-style: none;
+    padding: 0;
+}
+
+#projects li, #social li {
+    margin-bottom: 10px;
+}
+
+#projects a, #social a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#projects a:hover, #social a:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
 }
 
 footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
     text-align: center;
-}
-
-footer p {
-    margin: 0;
-}
-/* تحسين الحركات */
-nav ul li a {
-    position: relative;
-}
-
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 2px;
-    background-color: #ffcc00;
-    transition: width 0.3s ease;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
 }
