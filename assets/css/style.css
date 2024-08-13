@@ -15,7 +15,7 @@ html {
 }
 
 header {
-    background: linear-gradient(135deg, #333, #444); /* تدرج لوني */
+    background: linear-gradient(135deg, #1e90ff, #4169e1); /* تدرج لوني أزرق كهربائي وأزرق ملكي */
     color: #fff;
     padding: 15px 0;
     position: fixed;
@@ -45,7 +45,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ffcc00; /* تغيير اللون عند التمرير */
+    color: #00d4ff; /* تغيير اللون عند التمرير */
 }
 
 main {
@@ -72,7 +72,7 @@ section:hover {
     width: 160px;
     height: 160px;
     object-fit: cover;
-    border: 4px solid #007bff; /* إضافة حدود للصورة */
+    border: 4px solid #1e90ff; /* إضافة حدود للصورة */
     transition: transform 0.3s; /* تأثير الانتقال */
 }
 
@@ -90,14 +90,14 @@ section:hover {
 }
 
 #projects a, #social a {
-    color: #007bff;
+    color: #1e90ff;
     text-decoration: none;
     font-weight: bold;
 }
 
 #projects a:hover, #social a:hover {
     text-decoration: underline;
-    color: #0056b3; /* تغيير اللون عند التمرير */
+    color: #00d4ff; /* تغيير اللون عند التمرير */
 }
 
 form {
@@ -119,7 +119,7 @@ form input, form textarea {
 
 form button {
     padding: 12px 25px;
-    background-color: #007bff;
+    background-color: #1e90ff;
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -129,12 +129,12 @@ form button {
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background-color: #4169e1;
 }
 
 footer {
     text-align: center;
     padding: 15px;
-    background: linear-gradient(135deg, #333, #444); /* تدرج لوني */
+    background: linear-gradient(135deg, #1e90ff, #4169e1); /* تدرج لوني أزرق كهربائي وأزرق ملكي */
     color: #fff;
 }
