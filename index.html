@@ -253,6 +253,37 @@
         });
     </script>
     <script src="https://c1jis.github.io/L4ith/assets/js/script.js"></script>
-    <script src="link-checker.js"></script> <!-- ربط ملف جافا سكريبت لقسم فحص الروابط -->
+    <script>
+        document.getElementById('url-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var url = document.getElementById('url').value;
+            var apiKey = '58bd99c710a8c37a5b014c8971db4c7a14540798a52fdc96a3348e8594daf82d';
+            var apiEndpoint = 'https://www.virustotal.com/api/v3/urls';
+
+            fetch(apiEndpoint, {
+                method: 'POST',
+                headers: {
+                    'x-apikey': apiKey,
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    'url': url
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                var resultElement = document.getElementById('result');
+                if (data.data) {
+                    resultElement.innerHTML = `<p>الرابط تم فحصه بنجاح. حالته: ${data.data.attributes.last_analysis_stats.malicious} ملغوم، ${data.data.attributes.last_analysis_stats.suspicious} مشبوه.</p>`;
+                } else {
+                    resultElement.innerHTML = '<p>لم يتم العثور على نتائج.</p>';
+                }
+            })
+            .catch(error => {
+                document.getElementById('result').innerHTML = '<p>حدث خطأ في فحص الرابط. يرجى المحاولة لاحقًا.</p>';
+                console.error('Error:', error);
+            });
+        });
+    </script>
 </body>
 </html>
