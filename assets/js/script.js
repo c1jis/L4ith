@@ -25,4 +25,33 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault(); // يمنع إرسال النموذج
         }
     });
+
+    // التعامل مع نموذج فحص الروابط
+    const linkForm = document.getElementById('link-check-form');
+    linkForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // منع الإرسال الافتراضي
+
+        const url = document.getElementById('url').value.trim();
+        const resultDiv = document.getElementById('link-check-result');
+
+        if (url === '') {
+            resultDiv.innerHTML = 'يرجى إدخال رابط.';
+            return;
+        }
+
+        // إرسال طلب إلى API
+        fetch(`https://api.example.com/check-url?apikey=58bd99c710a8c37a5b014c8971db4c7a14540798a52fdc96a3348e8594daf82d&url=${encodeURIComponent(url)}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.isSafe) {
+                    resultDiv.innerHTML = 'الرابط آمن.';
+                } else {
+                    resultDiv.innerHTML = 'الرابط غير آمن.';
+                }
+            })
+            .catch(error => {
+                resultDiv.innerHTML = 'حدث خطأ أثناء فحص الرابط.';
+                console.error('Error:', error);
+            });
+    });
 });
