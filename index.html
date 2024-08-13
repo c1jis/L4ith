@@ -245,36 +245,45 @@
     <footer>
         <p>© 2024 ليث. جميع الحقوق محفوظة.</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"></script>
     <script>
+        // Smooth scrolling
         var scroll = new SmoothScroll('.scroll-link', {
             speed: 500,
             offset: 70
         });
-    </script>
-    <script src="https://c1jis.github.io/L4ith/assets/js/script.js"></script>
-    <script>
+
+        // فحص الروابط
         document.getElementById('url-form').addEventListener('submit', function(event) {
             event.preventDefault();
             var url = document.getElementById('url').value;
             var apiKey = '58bd99c710a8c37a5b014c8971db4c7a14540798a52fdc96a3348e8594daf82d';
             var apiEndpoint = 'https://www.virustotal.com/api/v3/urls';
 
-            fetch(apiEndpoint, {
-                method: 'POST',
+            // ترميز الرابط بترميز base64 حسب ما يتطلبه API
+            var urlEncoded = btoa(url);
+
+            fetch(apiEndpoint + '/' + urlEncoded, {
+                method: 'GET',
                 headers: {
-                    'x-apikey': apiKey,
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: new URLSearchParams({
-                    'url': url
-                })
+                    'x-apikey': apiKey
+                }
             })
             .then(response => response.json())
             .then(data => {
                 var resultElement = document.getElementById('result');
                 if (data.data) {
-                    resultElement.innerHTML = `<p>الرابط تم فحصه بنجاح. حالته: ${data.data.attributes.last_analysis_stats.malicious} ملغوم، ${data.data.attributes.last_analysis_stats.suspicious} مشبوه.</p>`;
+                    var analysisStats = data.data.attributes.last_analysis_stats;
+                    var totalVotes = analysisStats.malicious + analysisStats.suspicious + analysisStats.harmless + analysisStats.undetected;
+                    resultElement.innerHTML = `
+                        <p>نتائج الفحص:</p>
+                        <ul>
+                            <li>عدد التحليلات: ${totalVotes}</li>
+                            <li>آمن: ${analysisStats.harmless}</li>
+                            <li>غير آمن: ${analysisStats.malicious}</li>
+                            <li>مشبوه: ${analysisStats.suspicious}</li>
+                        </ul>
+                    `;
                 } else {
                     resultElement.innerHTML = '<p>لم يتم العثور على نتائج.</p>';
                 }
