@@ -4,13 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
         anchor.addEventListener('click', function(event) {
             // إزالة التحديد عن جميع الروابط
             document.querySelectorAll('nav ul li a').forEach(function(link) {
-                link.style.backgroundColor = '';
-                link.style.color = '';
+                link.classList.remove('active-link'); // استخدام فئة لتغيير النمط
             });
 
             // تمييز الرابط الذي تم النقر عليه
-            anchor.style.backgroundColor = '#007bff'; // لون الخلفية عند التحديد
-            anchor.style.color = '#fff'; // لون النص عند التحديد
+            anchor.classList.add('active-link'); // إضافة فئة للتحديد
         });
     });
 
