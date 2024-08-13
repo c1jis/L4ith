@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // إرسال طلب إلى API
+        // إرسال طلب إلى API لفحص الرابط
         fetch('https://www.virustotal.com/api/v3/urls', {
             method: 'POST',
             headers: {
