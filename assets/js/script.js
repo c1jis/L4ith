@@ -40,18 +40,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // إرسال طلب إلى API
-        fetch(`https://api.virustotal.com/check-url?apikey=58bd99c710a8c37a5b014c8971db4c7a14540798a52fdc96a3348e8594daf82d&url=${encodeURIComponent(url)}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.isSafe) {
-                    resultDiv.innerHTML = 'الرابط آمن.';
-                } else {
-                    resultDiv.innerHTML = 'الرابط غير آمن.';
-                }
-            })
-            .catch(error => {
-                resultDiv.innerHTML = 'حدث خطأ أثناء فحص الرابط.';
-                console.error('Error:', error);
-            });
+        fetch('https://www.virustotal.com/vtapi/v2/url/report', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `apikey=58bd99c710a8c37a5b014c8971db4c7a14540798a52fdc96a3348e8594daf82d&resource=${encodeURIComponent(url)}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.positives > 0) {
+                resultDiv.innerHTML = 'الرابط غير آمن.';
+            } else {
+                resultDiv.innerHTML = 'الرابط آمن.';
+            }
+        })
+        .catch(error => {
+            resultDiv.innerHTML = 'حدث خطأ أثناء فحص الرابط.';
+            console.error('Error:', error);
+        });
     });
 });
