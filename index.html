@@ -141,6 +141,45 @@
             background: linear-gradient(135deg, #1e90ff, #4169e1); /* تدرج لوني أزرق كهربائي وأزرق ملكي */
             color: #fff;
         }
+
+        /* استايل قسم فحص الروابط */
+        #link-checker {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        #link-checker label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #link-checker input[type="url"] {
+            width: calc(100% - 24px); /* عرض مدخل الرابط */
+            padding: 12px;
+        }
+
+        #link-checker button {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #link-checker button:hover {
+            background-color: #0056b3;
+        }
+
+        #link-checker .result {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -151,6 +190,7 @@
                 <li><a href="#projects" class="scroll-link">مشاريعي</a></li>
                 <li><a href="#social" class="scroll-link">حساباتي</a></li>
                 <li><a href="#contact" class="scroll-link">اتصل بي</a></li>
+                <li><a href="#link-checker" class="scroll-link">فحص الروابط</a></li> <!-- رابط إلى قسم فحص الروابط -->
             </ul>
         </nav>
     </header>
@@ -190,6 +230,17 @@
                 <button type="submit">إرسال</button>
             </form>
         </section>
+
+        <!-- قسم فحص الروابط -->
+        <section id="link-checker">
+            <h2>فحص الروابط</h2>
+            <form id="url-form">
+                <label for="url">أدخل الرابط لفحصه:</label>
+                <input type="url" id="url" name="url" placeholder="https://example.com" required>
+                <button type="submit">فحص الرابط</button>
+            </form>
+            <div class="result" id="result"></div>
+        </section>
     </main>
     <footer>
         <p>© 2024 ليث. جميع الحقوق محفوظة.</p>
@@ -202,5 +253,6 @@
         });
     </script>
     <script src="https://c1jis.github.io/L4ith/assets/js/script.js"></script>
+    <script src="link-checker.js"></script> <!-- ربط ملف جافا سكريبت لقسم فحص الروابط -->
 </body>
 </html>
