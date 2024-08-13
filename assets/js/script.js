@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // إرسال طلب إلى API
-        fetch(`https://api.example.com/check-url?apikey=58bd99c710a8c37a5b014c8971db4c7a14540798a52fdc96a3348e8594daf82d&url=${encodeURIComponent(url)}`)
+        fetch(`https://api.virustotal.com/check-url?apikey=58bd99c710a8c37a5b014c8971db4c7a14540798a52fdc96a3348e8594daf82d&url=${encodeURIComponent(url)}`)
             .then(response => response.json())
             .then(data => {
                 if (data.isSafe) {
