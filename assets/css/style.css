@@ -1,58 +1,5 @@
-/* استايل عام */
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    background-image: url('https://c1jis.github.io/L4ith/assets/images/profile.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow-x: hidden; /* منع التمرير الأفقي */
-}
-
-/* شريط التمرير */
-html {
-    scroll-behavior: smooth; /* تفعيل التمرير السلس */
-}
-
-header {
-    background: linear-gradient(135deg, #1e90ff, #4169e1); /* تدرج لوني أزرق كهربائي وأزرق ملكي */
-    color: #fff;
-    padding: 15px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* تأثير الظل */
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 20px; /* توسيع المسافة بين العناصر */
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s; /* تأثير الانتقال */
-}
-
-nav ul li a:hover {
-    color: #00d4ff; /* تغيير اللون عند التمرير */
-}
-
-main {
-    padding-top: 80px; /* لضبط المسافة تحت الشريط الثابت */
-}
-
-section {
+/* استايل لقسم فحص الروابط */
+#url-checker {
     padding: 30px;
     margin: 0 auto;
     max-width: 900px;
@@ -63,61 +10,32 @@ section {
     transition: transform 0.3s; /* تأثير الانتقال */
 }
 
-section:hover {
+#url-checker:hover {
     transform: translateY(-5px); /* تأثير التحجيم عند التمرير */
 }
 
-.profile-img {
-    border-radius: 50%;
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border: 4px solid #1e90ff; /* إضافة حدود للصورة */
-    transition: transform 0.3s; /* تأثير الانتقال */
+#url-checker h2 {
+    margin-top: 0;
 }
 
-.profile-img:hover {
-    transform: scale(1.1); /* تكبير الصورة عند التمرير */
-}
-
-#projects ul, #social ul {
-    list-style: none;
-    padding: 0;
-}
-
-#projects li, #social li {
-    margin-bottom: 15px;
-}
-
-#projects a, #social a {
-    color: #1e90ff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#projects a:hover, #social a:hover {
-    text-decoration: underline;
-    color: #00d4ff; /* تغيير اللون عند التمرير */
-}
-
-form {
+#url-checker form {
     display: grid;
     gap: 15px;
 }
 
-form label {
+#url-checker label {
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-form input, form textarea {
+#url-checker input[type="text"] {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
 }
 
-form button {
+#url-checker button {
     padding: 12px 25px;
     background-color: #1e90ff;
     color: #fff;
@@ -128,13 +46,11 @@ form button {
     transition: background-color 0.3s;
 }
 
-form button:hover {
+#url-checker button:hover {
     background-color: #4169e1;
 }
 
-footer {
-    text-align: center;
-    padding: 15px;
-    background: linear-gradient(135deg, #1e90ff, #4169e1); /* تدرج لوني أزرق كهربائي وأزرق ملكي */
-    color: #fff;
+#url-checker .result {
+    margin-top: 20px;
+    font-size: 16px;
 }
