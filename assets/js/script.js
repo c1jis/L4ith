@@ -9,13 +9,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // تمييز الرابط الذي تم النقر عليه
             anchor.classList.add('active-link'); // إضافة فئة للتحديد
-
-            // التنقل السلس إلى القسم المطلوب
-            event.preventDefault();
-            document.querySelector(anchor.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
         });
+    });
+
+    // Smooth Scroll with jQuery Easing
+    $('.scroll-link').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, 'easeInOutExpo');
+        }
     });
 
     // التحقق من صحة النموذج قبل الإرسال
