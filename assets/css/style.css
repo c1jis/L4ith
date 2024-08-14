@@ -1,205 +1,76 @@
-body {
-    background-image: url('https://c1jis.github.io/L4ith/assets/images/profile.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow-x: hidden; /* منع التمرير الأفقي */
-}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="موقع شخصي يعبر عن ليث ويعرض حساباته ومشاريعه.">
+    <title>موقعي الشخصي</title>
+    <link rel="stylesheet" href="https://c1jis.github.io/L4ith/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- تضمين Font Awesome -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home" class="scroll-link">الرئيسية</a></li>
+                <li><a href="#about" class="scroll-link">من أنا</a></li>
+                <li><a href="#projects" class="scroll-link">مشاريعي</a></li>
+                <li><a href="#social" class="scroll-link">حساباتي</a></li>
+                <li><a href="#contact" class="scroll-link">اتصل بي</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="home-content">
+                <h1>مرحبا بكم في موقعي الشخصي</h1>
+                <p>أنا ليث محمد، متخصص في الأمن السيبراني.</p>
+                <a href="#about" class="btn-primary">اعرف المزيد</a>
+            </div>
+        </section>
 
-header {
-    background: linear-gradient(135deg, #1e90ff, #4169e1); /* تدرج لوني أزرق كهربائي وأزرق ملكي */
-    color: #fff;
-    padding: 15px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* تأثير الظل */
-}
+        <section id="about">
+            <h2>من أنا</h2>
+            <img src="https://c1jis.github.io/L4ith/assets/images/profile.jpg" alt="صورة شخصية" class="profile-img">
+            <p>مرحبًا، أنا ليث محمد. أعمل في مجال الأمن السيبراني. يمكنك الاطلاع على المزيد من المعلومات حولي هنا.</p>
+        </section>
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
+        <section id="projects">
+            <h2>مشاريعي</h2>
+            <ul>
+                <li><a href="https://example.com/project1" target="_blank">مشروع 1</a> - وصف مختصر للمشروع.</li>
+                <li><a href="https://example.com/project2" target="_blank">مشروع 2</a> - وصف مختصر للمشروع.</li>
+            </ul>
+        </section>
 
-nav ul li {
-    margin: 0 20px; /* توسيع المسافة بين العناصر */
-}
+        <section id="social">
+            <h2>حساباتي الاجتماعية</h2>
+            <ul>
+                <li><a href="https://instagram.com/c1jis" target="_blank"><i class="fab fa-instagram"></i> انستجرام</a></li>
+                <li><a href="https://t.me/GXXQT" target="_blank"><i class="fab fa-telegram"></i> تليجرام</a></li>
+                <li><a href="https://github.com/c1jis" target="_blank"><i class="fab fa-github"></i> غيت هاب</a></li>
+            </ul>
+        </section>
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.3s; /* تأثير الانتقال */
-}
+        <section id="contact">
+            <h2>اتصل بي</h2>
+            <form action="https://formspree.io/f/mgvwyrnz" method="POST">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">الرسالة:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">إرسال</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 ليث محمد. جميع الحقوق محفوظة.</p>
+    </footer>
 
-nav ul li a:hover {
-    color: #00d4ff; /* تغيير اللون عند التمرير */
-}
-
-main {
-    padding-top: 80px; /* لضبط المسافة تحت الشريط الثابت */
-}
-
-section {
-    padding: 30px;
-    margin: 0 auto;
-    max-width: 900px;
-    background-color: rgba(255, 255, 255, 0.9); /* خلفية شبه شفافة */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* تحسين تأثير الظل */
-    margin-bottom: 30px;
-    transition: transform 0.3s; /* تأثير الانتقال */
-}
-
-section:hover {
-    transform: translateY(-5px); /* تأثير التحجيم عند التمرير */
-}
-
-.profile-img {
-    border-radius: 50%;
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border: 4px solid #1e90ff; /* إضافة حدود للصورة */
-    transition: transform 0.3s; /* تأثير الانتقال */
-}
-
-.profile-img:hover {
-    transform: scale(1.1); /* تكبير الصورة عند التمرير */
-}
-
-#projects ul, #social ul {
-    list-style: none;
-    padding: 0;
-}
-
-#projects li, #social li {
-    margin-bottom: 15px;
-}
-
-#projects a, #social a {
-    color: #1e90ff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-#projects a:hover, #social a:hover {
-    text-decoration: underline;
-    color: #00d4ff; /* تغيير اللون عند التمرير */
-}
-
-form {
-    display: grid;
-    gap: 15px;
-}
-
-form label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
-
-form button {
-    padding: 12px 25px;
-    background-color: #1e90ff;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #4169e1;
-}
-
-footer {
-    text-align: center;
-    padding: 15px;
-    background: linear-gradient(135deg, #1e90ff, #4169e1); /* تدرج لوني أزرق كهربائي وأزرق ملكي */
-    color: #fff;
-}
-
-/* استايل للقسم الرئيسي */
-#home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* يعرض القسم الرئيسي على كامل الشاشة */
-    color: #fff;
-    text-align: center;
-    background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://c1jis.github.io/L4ith/assets/images/background.jpg') no-repeat center center/cover; /* خلفية متحركة وجذابة */
-}
-
-#home h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    animation: fadeInDown 1.5s ease; /* حركة انسيابية للنص */
-}
-
-#home p {
-    font-size: 24px;
-    margin-bottom: 40px;
-    animation: fadeInUp 1.5s ease; /* حركة انسيابية للنص */
-}
-
-#home .btn-primary {
-    padding: 10px 20px;
-    background-color: #1e90ff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    animation: fadeInUp 2s ease; /* حركة انسيابية للنص */
-    transition: background-color 0.3s;
-}
-
-#home .btn-primary:hover {
-    background-color: #00d4ff;
-}
-
-/* حركات النصوص */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* إعدادات خاصة بالروابط النشطة */
-.active-link {
-    font-weight: bold;
-    color: #00d4ff;
-}
-
-/* إعدادات التمرير البطيء */
-html {
-    scroll-behavior: smooth;
-}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- تضمين jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> <!-- تضمين jQuery Easing -->
+    <script src="script.js"></script> <!-- تضمين كود الجافا سكريبت -->
+</body>
+</html>
