@@ -15,6 +15,7 @@
             overflow-x: hidden; /* منع التمرير الأفقي */
             color: #333; /* تحسين قراءة النصوص */
             font-family: Arial, sans-serif; /* استخدام خط سهل القراءة */
+            transition: background-color 0.5s; /* تأثير الانتقال */
         }
 
         header {
@@ -26,6 +27,7 @@
             width: 100%;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* تأثير الظل */
+            transition: background 0.5s; /* تأثير الانتقال */
         }
 
         nav ul {
@@ -53,6 +55,7 @@
 
         main {
             padding-top: 80px; /* لضبط المسافة تحت الشريط الثابت */
+            transition: transform 0.5s; /* تأثير الانتقال */
         }
 
         section {
@@ -67,7 +70,7 @@
         }
 
         section:hover {
-            transform: translateY(-5px); /* تأثير التحجيم عند التمرير */
+            transform: scale(1.02); /* تأثير التحجيم عند التمرير */
         }
 
         .profile-img {
@@ -83,102 +86,24 @@
             transform: scale(1.1); /* تكبير الصورة عند التمرير */
         }
 
-        #projects ul, #social ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        #projects li, #social li {
-            margin-bottom: 15px;
-        }
-
-        #projects a, #social a {
-            color: #1e90ff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        #projects a:hover, #social a:hover {
-            text-decoration: underline;
-            color: #00d4ff; /* تغيير اللون عند التمرير */
-        }
-
-        form {
-            display: grid;
-            gap: 15px;
-        }
-
-        form label {
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        form input, form textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-
-        form button {
-            padding: 12px 25px;
-            background-color: #1e90ff;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        form button:hover {
-            background-color: #4169e1;
-        }
-
         footer {
             text-align: center;
             padding: 15px;
             background: linear-gradient(135deg, #1e90ff, #4169e1); /* تدرج لوني أزرق كهربائي وأزرق ملكي */
             color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.3); /* تأثير الظل */
         }
 
-        /* استايل قسم فحص الروابط */
-        #link-checker {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        #link-checker label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        #link-checker input[type="url"] {
-            width: calc(100% - 24px); /* عرض مدخل الرابط */
-            padding: 12px;
-        }
-
-        #link-checker button {
-            margin-top: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            padding: 10px 20px;
+        .scroll-link {
             cursor: pointer;
         }
 
-        #link-checker button:hover {
-            background-color: #0056b3;
-        }
-
-        #link-checker .result {
-            margin-top: 20px;
-            font-size: 16px;
+        .scroll-link.active {
             font-weight: bold;
+            color: #00d4ff; /* لون مميز للقسم النشط */
         }
     </style>
 </head>
@@ -190,7 +115,6 @@
                 <li><a href="#projects" class="scroll-link">مشاريعي</a></li>
                 <li><a href="#social" class="scroll-link">حساباتي</a></li>
                 <li><a href="#contact" class="scroll-link">اتصل بي</a></li>
-                <li><a href="#link-checker" class="scroll-link">فحص الروابط</a></li> <!-- رابط إلى قسم فحص الروابط -->
             </ul>
         </nav>
     </header>
@@ -230,17 +154,6 @@
                 <button type="submit">إرسال</button>
             </form>
         </section>
-
-        <!-- قسم فحص الروابط -->
-        <section id="link-checker">
-            <h2>فحص الروابط</h2>
-            <form id="url-form">
-                <label for="url">أدخل الرابط لفحصه:</label>
-                <input type="url" id="url" name="url" placeholder="https://example.com" required>
-                <button type="submit">فحص الرابط</button>
-            </form>
-            <div class="result" id="result"></div>
-        </section>
     </main>
     <footer>
         <p>© 2024 ليث. جميع الحقوق محفوظة.</p>
@@ -253,44 +166,11 @@
             offset: 70
         });
 
-        // فحص الروابط
-        document.getElementById('url-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var url = document.getElementById('url').value;
-            var apiKey = '58bd99c710a8c37a5b014c8971db4c7a14540798a52fdc96a3348e8594daf82d';
-            var apiEndpoint = 'https://www.virustotal.com/api/v3/urls';
-
-            // ترميز الرابط بترميز base64 حسب ما يتطلبه API
-            var urlEncoded = btoa(url);
-
-            fetch(apiEndpoint + '/' + urlEncoded, {
-                method: 'GET',
-                headers: {
-                    'x-apikey': apiKey
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                var resultElement = document.getElementById('result');
-                if (data.data) {
-                    var analysisStats = data.data.attributes.last_analysis_stats;
-                    var totalVotes = analysisStats.malicious + analysisStats.suspicious + analysisStats.harmless + analysisStats.undetected;
-                    resultElement.innerHTML = `
-                        <p>نتائج الفحص:</p>
-                        <ul>
-                            <li>عدد التحليلات: ${totalVotes}</li>
-                            <li>آمن: ${analysisStats.harmless}</li>
-                            <li>غير آمن: ${analysisStats.malicious}</li>
-                            <li>مشبوه: ${analysisStats.suspicious}</li>
-                        </ul>
-                    `;
-                } else {
-                    resultElement.innerHTML = '<p>لم يتم العثور على نتائج.</p>';
-                }
-            })
-            .catch(error => {
-                document.getElementById('result').innerHTML = '<p>حدث خطأ في فحص الرابط. يرجى المحاولة لاحقًا.</p>';
-                console.error('Error:', error);
+        // تمييز القسم النشط
+        document.querySelectorAll('.scroll-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.scroll-link').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
             });
         });
     </script>
