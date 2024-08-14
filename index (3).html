@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="موقع شخصي يعبر عن ليث ويعرض حساباته ومشاريعه.">
+    <title>موقعي الشخصي</title>
+    <link rel="stylesheet" href="https://c1jis.github.io/L4ith/assets/css/style.css">
+    <style>
+        body {
+            background-image: url('https://c1jis.github.io/L4ith/assets/images/profile.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow-x: hidden; /* منع التمرير الأفقي */
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e90ff, #4169e1); /* تدرج لوني أزرق كهربائي وأزرق ملكي */
+            color: #fff;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* تأثير الظل */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px; /* توسيع المسافة بين العناصر */
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s; /* تأثير الانتقال */
+        }
+
+        nav ul li a:hover {
+            color: #00d4ff; /* تغيير اللون عند التمرير */
+        }
+
+        main {
+            padding-top: 80px; /* لضبط المسافة تحت الشريط الثابت */
+        }
+
+        section {
+            padding: 30px;
+            margin: 0 auto;
+            max-width: 900px;
+            background-color: rgba(255, 255, 255, 0.9); /* خلفية شبه شفافة */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* تحسين تأثير الظل */
+            margin-bottom: 30px;
+            transition: transform 0.3s; /* تأثير الانتقال */
+        }
+
+        section:hover {
+            transform: translateY(-5px); /* تأثير التحجيم عند التمرير */
+        }
+
+        .profile-img {
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border: 4px solid #1e90ff; /* إضافة حدود للصورة */
+            transition: transform 0.3s; /* تأثير الانتقال */
+        }
+
+        .profile-img:hover {
+            transform: scale(1.1); /* تكبير الصورة عند التمرير */
+        }
+
+        #projects ul, #social ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #projects li, #social li {
+            margin-bottom: 15px;
+        }
+
+        #projects a, #social a {
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #projects a:hover, #social a:hover {
+            text-decoration: underline;
+            color: #00d4ff; /* تغيير اللون عند التمرير */
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        form button {
+            padding: 12px 25px;
+            background-color: #1e90ff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #4169e1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #1e90ff, #4169e1); /* تدرج لوني أزرق كهربائي وأزرق ملكي */
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about" class="scroll-link">من أنا</a></li>
+                <li><a href="#projects" class="scroll-link">مشاريعي</a></li>
+                <li><a href="#social" class="scroll-link">حساباتي</a></li>
+                <li><a href="#contact" class="scroll-link">اتصل بي</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>من أنا</h2>
+            <img src="https://c1jis.github.io/L4ith/assets/images/profile.jpg" alt="صورة شخصية " class="profile-img">
+            <p>مرحبًا، أنا ليث محمد. أعمل في مجال الأمن السيبراني. يمكنك الاطلاع على المزيد من المعلومات حولي هنا.</p>
+        </section>
+
+        <section id="projects">
+            <h2>مشاريعي</h2>
+            <ul>
+                <li><a href="https://example.com/project1" target="_blank">مشروع 1</a> - وصف مختصر للمشروع.</li>
+                <li><a href="https://example.com/project2" target="_blank">مشروع 2</a> - وصف مختصر للمشروع.</li>
+            </ul>
+        </section>
+
+        <section id="social">
+            <h2>حساباتي الاجتماعية</h>
+            <ul>
+                <li><a href="https://instagram.com/c1jis" target="_blank">انستجرام</a></li>
+                <li><a href="https://t.me/GXXQT" target="_blank">تليجرام</a></li>
+                <li><a href="https://github.com/c1jis" target="_blank">غيت هاب</a></li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>اتصل بي</h2>
+            <form action="https://formspree.io/f/mgvwyrnz" method="POST">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">الرسالة:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">إرسال</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 ليث. جميع الحقوق محفوظة.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
+    <script>
+        var scroll = new SmoothScroll('.scroll-link', {
+            speed: 500,
+            offset: 70
+        });
+    </script>
+    <script src="https://c1jis.github.io/L4ith/assets/js/script.js"></script>
+</body>
+</html>
