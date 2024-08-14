@@ -203,3 +203,13 @@ footer {
 html {
     scroll-behavior: smooth;
 }
+/* استعلام وسائط لتصغير حجم النص في شريط التنقل على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    nav ul li {
+        margin: 0 10px; /* تقليل المسافة بين العناصر */
+    }
+
+    nav ul li a {
+        font-size: 14px; /* تصغير حجم النص */
+    }
+}
