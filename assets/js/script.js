@@ -1,3 +1,4 @@
+// عند تحميل المستند
 document.addEventListener('DOMContentLoaded', function() {
     // تغيير اللون عند النقر على الروابط في القائمة
     document.querySelectorAll('nav ul li a').forEach(function(anchor) {
@@ -12,21 +13,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth Scroll with jQuery Easing
-    $('.scroll-link').on('click', function(event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
+    // إضافة تأثير التمرير السلس
+    document.querySelectorAll('.scroll-link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
 
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, 'easeInOutExpo');
-        }
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            window.scrollTo({
+                top: targetElement.offsetTop - 60,
+                behavior: 'smooth'
+            });
+        });
     });
 
     // التحقق من صحة النموذج قبل الإرسال
     const form = document.querySelector('form');
-    
+
     form.addEventListener('submit', function(event) {
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
