@@ -1,76 +1,138 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="موقع شخصي يعبر عن ليث ويعرض حساباته ومشاريعه.">
-    <title>موقعي الشخصي</title>
-    <link rel="stylesheet" href="https://c1jis.github.io/L4ith/assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- تضمين Font Awesome -->
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home" class="scroll-link">الرئيسية</a></li>
-                <li><a href="#about" class="scroll-link">من أنا</a></li>
-                <li><a href="#projects" class="scroll-link">مشاريعي</a></li>
-                <li><a href="#social" class="scroll-link">حساباتي</a></li>
-                <li><a href="#contact" class="scroll-link">اتصل بي</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home" class="hero">
-            <div class="home-content">
-                <h1>مرحبا بكم في موقعي الشخصي</h1>
-                <p>أنا ليث محمد، متخصص في الأمن السيبراني.</p>
-                <a href="#about" class="btn-primary">اعرف المزيد</a>
-            </div>
-        </section>
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        <section id="about">
-            <h2>من أنا</h2>
-            <img src="https://c1jis.github.io/L4ith/assets/images/profile.jpg" alt="صورة شخصية" class="profile-img">
-            <p>مرحبًا، أنا ليث محمد. أعمل في مجال الأمن السيبراني. يمكنك الاطلاع على المزيد من المعلومات حولي هنا.</p>
-        </section>
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
 
-        <section id="projects">
-            <h2>مشاريعي</h2>
-            <ul>
-                <li><a href="https://example.com/project1" target="_blank">مشروع 1</a> - وصف مختصر للمشروع.</li>
-                <li><a href="https://example.com/project2" target="_blank">مشروع 2</a> - وصف مختصر للمشروع.</li>
-            </ul>
-        </section>
+/* Basic Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
 
-        <section id="social">
-            <h2>حساباتي الاجتماعية</h2>
-            <ul>
-                <li><a href="https://instagram.com/c1jis" target="_blank"><i class="fab fa-instagram"></i> انستجرام</a></li>
-                <li><a href="https://t.me/GXXQT" target="_blank"><i class="fab fa-telegram"></i> تليجرام</a></li>
-                <li><a href="https://github.com/c1jis" target="_blank"><i class="fab fa-github"></i> غيت هاب</a></li>
-            </ul>
-        </section>
+nav ul {
+    list-style: none;
+    padding: 0;
+}
 
-        <section id="contact">
-            <h2>اتصل بي</h2>
-            <form action="https://formspree.io/f/mgvwyrnz" method="POST">
-                <label for="name">الاسم:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">البريد الإلكتروني:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">الرسالة:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">إرسال</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 ليث محمد. جميع الحقوق محفوظة.</p>
-    </footer>
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- تضمين jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script> <!-- تضمين jQuery Easing -->
-    <script src="script.js"></script> <!-- تضمين كود الجافا سكريبت -->
-</body>
-</html>
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active-link {
+    color: #f0a500;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    header {
+        padding: 20px 0;
+    }
+
+    .home-content h1 {
+        font-size: 24px;
+    }
+
+    .home-content p {
+        font-size: 18px;
+    }
+
+    .btn-primary {
+        font-size: 18px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://c1jis.github.io/L4ith/assets/images/background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    padding: 10px 20px;
+    background: #f0a500;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Other Sections */
+section {
+    padding: 60px 20px;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+.profile-img {
+    display: block;
+    max-width: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
